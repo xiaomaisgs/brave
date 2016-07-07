@@ -10,4 +10,13 @@
 
 @interface HealthKitManager : NSObject
 
++ (instancetype)shareHealthKit;
+
+- (BOOL)isAvailable;
+
+- (void)requestAutherizationReturnBack:(void(^)(BOOL autherStatus))hanler;
+
+//获取步数
+- (void)requestHealthStepCountReturnBack:(void(^)(NSMutableArray *))stepsCountHandler;
+
 @end
